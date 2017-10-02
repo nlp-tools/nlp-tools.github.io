@@ -2,8 +2,105 @@
 <html>
 	<head>
 		<title>NLP Tools</title>
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'/>
+		<style>
+			body, html {
+				padding: 0;
+				margin: 0;
+				font-family: "Open Sans", sans-serif;
+				background: #f3f3f3;
+			}
+			#splash {
+				position: relative;
+				height: 400px;
+				width: 100%;
+				overflow: hidden;				
+				margin-bottom: 30px;
+			}
+			#splash img {
+				width: 100%;
+				height: auto;
+				z-index: 0;
+			}
+			#splash .unsplash {
+				position: absolute;
+				bottom: 10px;
+				right: 10px;
+				color: #555;
+				font-size: 12px;
+			}
+			#splash .unsplash a {
+				color: #666;
+			}
+			#splash .unsplash a:hover {
+				color: #ddd;
+			}
+			#splash h1, #splash h2 {
+				position: absolute;
+				bottom: 6%;
+				left: 100px;
+				color: white;
+				font-size: 100px;
+				z-index: 10;
+			}
+			#splash h2 {
+				font-size: 30px;
+				bottom: 6%;
+				color: #eee;
+				margin-left: 5px;
+			}
+			#splash h1:after, #splash h2:after {
+				position: absolute;
+				top: 3px;
+				left: 3px;
+				content: attr(data-title);
+				color: #000;
+				width: 100%;
+				z-index: -1;
+			}
+			nav#navbar {
+				height: 60px;				
+				display: table;
+				width: 100%;
+				border-bottom: 4px solid rgb(3, 52, 181);
+				display: none;
+			}
+			#navbar h2 {
+				font-size: 30px;
+				padding: 0;
+				margin: 0;
+				vertical-align: middle;
+				display: table-cell;
+				padding: 0 10px;
+			}
+			#navbar .right {
+				display: table-cell;
+				width: auto;
+			}
+			.container {
+				width: 1280px;
+				max-width: 100%;
+				margin: 0 auto;
+			}
+
+		</style>
 	</head>
 	<body>
-		<p>Welcome to NLP Tools (placeholder page).</p>
+		<nav id="navbar"><!-- hidden -->
+			<h2>NLP Tools</h2>
+			<div class="right"></div>
+		</nav>
+		<div id="splash">
+			
+			<img src="public/images/splash3.jpg"/>
+			<h1 data-title="NLP Tools">NLP Tools</h1>
+			<h2 data-title="Useful tools for Natural Language Processing">Useful tools for Natural Language Processing</h2>
+			<div class="unsplash">Photo found at <a href="https://unsplash.com/photos/Hv5vQ8AkbAs">Unsplash</a>.</div>
+		</div>
+		<main>
+			<div class="container">
+				<p>Welcome to NLP Tools (placeholder page).</p>
+			</div>
+		</main>
 	</body>
 </html>
