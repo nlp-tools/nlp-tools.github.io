@@ -162,11 +162,113 @@
 
 			footer {
 				font-size: 0.8em;
-				color: #444;
+				background: #222;
+				box-shadow: 0 50px 0px 50px #ddd;
+				padding: 5px 0;
+				color: white;
 			}
 			.pad {
 				margin: 40px 0;
 			}
+
+
+
+
+
+			ul.tools-list {
+				list-style: none;
+				padding: 0 20px;
+				margin: 40px 0;
+				margin-bottom: 80px;
+
+			}
+			ul.tools-list li {
+				padding: 0px;
+				border: 1px solid #ddd;
+				display: table;
+				margin: 0;
+				margin-bottom: 40px;
+				width: 100%;
+				overflow: hidden;
+			}
+			ul.tools-list li .thumbnail {
+				width: 360px;
+				height: 200px;
+				display: table-cell;
+				overflow: hidden;
+				border-right: 1px solid #ddd;
+			}
+			ul.tools-list li .thumbnail a {
+				background-size: cover;
+				height: 100%;
+				-moz-transition: transform 0.2s ease;
+				-webkit-transition: transform 0.2s ease;
+				transition: transform 0.2s ease;
+				image-rendering: -webkit-optimize-contrast;			
+				display: block;
+
+				
+				
+			}
+
+			ul.tools-list li .thumbnail a:hover {
+				transform: scale(1.05);
+			}
+
+
+
+			ul.tools-list li .content {
+				width: auto;
+				display: inline-block;
+				padding: 10px 30px;
+				display: table-cell;
+				box-sizing: border-box;
+				vertical-align: top;
+				background: #fbfbfb;
+			}
+			ul.tools-list li .content a {
+
+				position: relative;
+			}
+
+			a {
+				text-decoration: none;
+				color: #0275d8;				
+			}
+			a:hover {
+				color: #025aa5;
+				text-decoration: underline;
+			}
+
+		
+
+			hr {
+				border: 0;
+				border-bottom: 1px solid #ccc;
+				margin: 0;
+			}
+
+
+
+			section#intro-section {
+				background: #e6e6e6;
+				padding: 30px 0;
+				box-sizing: border-box;
+				margin-bottom: 40px;
+			}
+			#intro-section p {
+				margin: 0;
+			}
+			ul.tools-wip .thumbnail a {
+				pointer-events: none;
+			}
+			ul.tools-wip .content a {
+				text-decoration: none !important;
+				color: #222 !important;
+				pointer-events: none;
+			}
+
+
 
 		</style>
 	</head>
@@ -185,40 +287,63 @@
 			</div>
 		</div>
 		<main>
+			<section id="intro-section">
+				<div class="container">
+					<p>This website contains several applications designed for anyone undertaking natural language processing. All software on this website is open source and freely available for download via GitHub.</p>
+				</div>
+			</section>
 			<div class="container">
-				<div class="pad">
-					<p>Welcome to NLP Tools.</p>
+				<!--<div class="pad">
 					<p>This website contains several applications designed for anyone undertaking natural language processing. All software on this website is open source and freely available for download via Github.</p>
-				</div>
+				</div>-->
 
-				<div class="links">
+			
 
-					<a href="https://nlp-tools.org/redcoat"><div class="link">
-						<div class="bg" style="background-image: url('public/images/redcoat.png')"></div>
-						<div class="content">
-							<h2>RedCOAT</h2>
-							<p>RedCOAT is a collaborative annotation tool for labelling entity recognition data. Its keyboard-based interface allows for extremely rapid annotation.
-							<br/><span class="learn-more">Learn more</span></p>
-						</div>
-					</div></a><!--
-					--><a href="lexnorm-vis"><div class="link">
-						<div class="bg" style="background-image: url('public/images/lexnorm-vis.png')"></div>
-						<div class="content">
-							<h2>Lexnorm-Vis</h2>
-							<p>Lexnorm-Vis is a simple web-based platform that visualises the results of lexical normalisation tasks.
-							<br/><span class="learn-more">Learn more</span></p>
-						</div>
-					</div></a><!--
-					--><a href="er-graph"><div class="link">
-						<div class="bg" style="background-image: url('public/images/erg.png')"></div>
-						<div class="content">
-							<h2>ER Graph</h2>
-							<p>ER (Entity Recognition) Graph visualises the links between entities. This allows domain experts to easy view the relationships between entities in the data.
-							<br/><span class="learn-more">Learn more</span></p>
-						</div>
-					</div></a>
-				</div>
+				
+				<h2>Tools Available for Download</h2>
+				<hr/>
+				<ul class="tools-list">
+					<li>
+
+						<span class="thumbnail"><a href="redcoat" style="background-image: url('public/images/redcoat.png')"></a></span>
+						<span class="content">
+							<a href="redcoat"><h3 class="title">CoAT</h3></a>
+							<p class="description">CoAT is a collaborative annotation tool for labelling entity recognition data. Its keyboard-based interface allows for extremely rapid annotation.</p>
+						</span>
+					</li>
+				</ul>
+
+				
+
+
+				<h2>Works in Progress</h2>
+				<hr/>
+				<ul class="tools-list tools-wip">
+					<li>
+
+						<span class="thumbnail"><a href="lexvis" style="background-image: url('public/images/lexnorm-vis.png')"></a></span>
+						<span class="content">
+							<a href="lexvis"><h3 class="title">Lexnorm-Vis</h3></a>
+							<p class="description">Lexnorm-Vis is a simple web-based platform that visualises the results of lexical normalisation tasks.</p>
+						</span>
+					</li>
+					<li>
+
+						<span class="thumbnail"><a href="erg" style="background-image: url('public/images/erg.png')"></a></span>
+						<span class="content">
+							<a href="erg"><h3 class="title">ER Graph</h3></a>
+							<p class="description">ER (Entity Recognition) Graph visualises the links between entities. This allows domain experts to easy view the relationships between entities in the data.</p>
+						</span>
+					</li>
+				</ul>
+
+				<h2>Call for Tools</h2>
+				<hr/>
+				<p>If you have any tools you would like us to showcase here, please let us know at <a href="#">example-email-address</a>.
+				<div style="height: 300px"></div>
+
 			</div>
+
 		</main>
 		<footer>
 			<div class="container">
