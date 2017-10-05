@@ -1,10 +1,236 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<base href="https://nlp-tools.org"/>
-		<title>NLP Tools - Redcoat</title>
+		<title>NLP Tools</title>
+		<!--<base href = "https://nlp-tools.org"/>-->
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'/>
+		<link href='../stylesheets/shared.css' rel='stylesheet' type='text/css'/>
+
+
+
+		<style>
+			h1, h2.big-heading {
+				font-size: 3em;
+				margin-bottom: 0;
+				margin-top: 0;
+
+			}
+			h2.big-heading {
+				padding: 30px 0;
+			}
+			main#tool-page .tool-table {
+				display: table;
+				min-height: 85vh;
+			}
+			/*
+			section#tool-description {
+				padding: 20px 80px;
+				width: 65%;
+				display: table-cell;
+				padding-left: 200px;				
+			}
+			*/
+			#tool-page hr {
+				margin-bottom: 20px;
+			}
+			
+			section#tool-screenshots {
+				padding: 20px 80px;
+				
+				background: #2a2a2a;
+				color: white;
+
+				/*
+				width: 35%;
+				display: table-cell;
+				padding-right: 200px;
+				*/
+			}
+
+		
+
+			section#tool-screenshots hr {
+				border: 0;
+				border-top: 1px solid #444;
+			}
+			section#live-demo {
+				background: white;
+				padding: 20px 200px;
+			}
+
+
+			.screenshot-gallery figure {
+				padding: 0;
+				margin: 0;
+				margin-top: 30px;
+				width: 33.3%;
+				display: inline-block;
+				vertical-align: top;
+				padding: 10px 20px;
+				box-sizing: border-box;
+			}
+			.screenshot-gallery figcaption {
+				padding: 15px 0;
+				color: #eee;
+				margin-bottom: 20px;
+				font-size: 16px;
+				line-height: 150%;
+				display: block;
+			}
+			.screenshot-gallery .main-screenshot .screenshot {
+				width: 100%;
+				height: 220px;
+				background-size: cover;
+				background-position: center;
+				image-rendering: -webkit-optimize-contrast;	
+			}
+			.screenshot-gallery ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				width: 100%;
+			}
+
+			.screenshot-gallery .other-screenshots .screenshot {
+				display: inline-block;
+				width: 48%;
+				margin-right: 2%;
+				height: 150px;
+				background-size: cover;
+				background-position: center;
+				image-rendering: -webkit-optimize-contrast;
+				margin-bottom: 2%;
+				box-sizing: border-box;
+				border: 2px solid #2a2a2a;
+				cursor: pointer;	
+			}
+			.screenshot-gallery .other-screenshots .screenshot:hover {
+				border: 2px solid #0275d8;
+
+			}
+			.screenshot-gallery .other-screenshots .screenshot:nth-child(even) {
+				margin-right: 0;
+			}
+			.wide-container {
+				width: 1600px;
+				margin: 0 auto;
+			}
+
+			#tool-description h2:not(.big-heading) {
+				padding: 30px 0 10px 0;
+			}
+
+
+
+		</style>
+
 	</head>
 	<body>
-		<p>This is another test page.</p>
+		<nav id="navbar">
+
+			<div class="bg"></div>
+			<div class="container">
+			<h2 style="margin-top: 30px"><a href="../">NLP Tools</a></h2>
+			<div class="right"></div>
+			</div>
+		</nav>
+
+		<div id="splash" class="parallax move-down">
+			
+			<div class="bg" style="background-image: url('../public/images/redcoat-splash.jpg')"></div>
+
+			<div class="container">
+				<h1 data-title="Redcoat">Redcoat</h1>
+				<h2 data-title="Collaborative Annotation Tool">Collaborative Annotation Tool</h2>
+				<!--<div class="unsplash">Photo found at <a href="https://unsplash.com/photos/Hv5vQ8AkbAs">Unsplash</a>.</div>-->
+			</div>
+		</div>
+
+
+		<main id="tool-page">
+			<section id="intro-section" class="grey-block">
+				<div class="container">
+					<p>This tool is available for download at <a href="https://github.com/nlp-tools/annotation-tool">https://github.com/nlp-tools/annotation-tool</a>.</p>
+				</div>
+			</section>
+
+			<div class="container">
+
+				<section id="tool-description">
+					<h2 class="big-heading">Description</h2>
+					<hr/>
+					<p>Redcoat is a collaborative annotation tool for labelling entity recognition data. Its keyboard-based interface allows for very rapid annotation. It is designed to be extremely easy to set up and distribute to multiple annotators.</p>
+					<p>Redcoat has three primary goals:</p>
+					<ol>
+						<li>Enable <b>faster annotation</b> than is currently possible with other annotation tools;</li>
+						<li>Maximise the <b>simplicity of setting up an annotation project</b>; and</li>
+						<li>Make it <b>easy to collaborate and distribute</b> the project to annotators.</li>
+					</ol>
+					<h2>Annotation Speed</h2>
+					<p>One key feature that differentiates Redcoat from other annotation tools is its keyboard-based interface. Rather than selecting tokens with the mouse, users use the arrow keys to navigate between tokens, and the number keys to label entities as a certain class. This results in slower annotation at first, while the annotators become familiar with the numbers corresponding to each class. Within a short time, however, annotation becomes much quicker as tagging each entity requires one key press rather than mouse movement, selection, and clicking.</p>
+
+
+					<h2>Project Setup</h2>
+					<p>Many annotation tools require the user to be familiar with the file structure requirements of the tool before an annotation project can be released. Setting up a project therefore requires a great deal of time spent reading documentation and ensuring the files are in the correct format.</p>
+					<p>Redcoat's simple project setup page prompts the user for all details relating to the project, bypassing this problem. The project can be setup regardless of whether your data is tokenized, and listing the entity categories can be done through the web rather than through a carefully-formatted file if desired.</p>
+
+					<h2>Distributing Projects</h2>
+					<p>Most existing tools require the project creator to manually divide their data into a number of folders and send a link to each annotator. Just like setting up a project, this also requires a lot of time to set up correctly.</p>
+					<p>Redcoat can divide your data into a certain number of batches automatically. It will provide you with a list of URLs that you may email to the annotators yourself. Alternatively, you may elect to automatically email the links out to the annotators using the built-in mail service, saving vast amounts of your time.</p>
+
+					<h2>Other Features</h2>
+					<p><b>Statistics Tracking:</b> After you have set up and distributed a project, Redcoat will provide you with statistics tracking. This allows you to view useful information such as how many records are yet to be annotated, and the number of tokens tagged with each entity class.</p>
+
+
+
+				</section>
+			</div>
+
+			<section id="live-demo">
+				<div class="container">
+					<h2 class="big-heading">Live Demo</h2>
+					<hr/>
+					<p>Coming soon!</p>
+					<br/><br/><br/>
+				</div>
+			</section>
+			<section id="tool-screenshots">
+				<div class="container">
+					
+					<h2 class="big-heading">Screenshots</h2>
+					<hr/>
+
+					<div class="screenshot-gallery">
+
+						<figure class="main-screenshot">
+							<div class="screenshot" style="background-image: url('../public/images/redcoat.png')"></div>
+							<figcaption>Redcoat's simple tagging interface. Each colour represents a different entity class.</figcaption>
+						</figure><!--
+						--><figure class="main-screenshot">
+							<div class="screenshot" style="background-image: url('../public/images/redcoat-setup-2.png')"></div>
+							<figcaption>The project setup page makes it easy to set up a new annotation project and distribute it to multiple annotators.</figcaption>
+						</figure>
+						<!--
+						<ul class="other-screenshots">
+							<li class="screenshot" style="background-image: url('../public/images/redcoat.png')"></li>
+							<li class="screenshot" style="background-image: url('../public/images/redcoat.png')"></li>
+							<li class="screenshot" style="background-image: url('../public/images/redcoat.png')"></li>
+							<li class="screenshot" style="background-image: url('../public/images/redcoat.png')"></li>
+						</ul>
+						-->
+
+
+
+					</div>
+
+
+				</div>
+			</section>
+		</main>
+		<footer>
+			<div class="container">
+				<p>&copy;NLP Tools 2017.</p>
+			</div>
+		</footer>
 	</body>
 </html>

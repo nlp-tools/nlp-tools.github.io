@@ -2,295 +2,29 @@
 <html>
 	<head>
 		<title>NLP Tools</title>
-		<base href = "https://nlp-tools.org"/>
+		<!--<base href = "https://nlp-tools.org"/>-->
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'/>
-		<style>
-			body, html {
-				padding: 0;
-				margin: 0;
-				font-family: "Open Sans", sans-serif;
-				background: #f3f3f3;
-				color: #111;
-			}
-			p {
-				line-height: 200%;
-				font-size: 1.2em;
-			}
-			#splash {
-				position: relative;
-				height: 370px;
-				width: 100%;
-				overflow: hidden;				
-				
-				background-image: url("public/images/splash3.jpg");
-				background-size: cover;
-			}
-			#splash img {
-				width: 100%;
-				height: auto;
-				z-index: 0;
-			}
-			#splash .unsplash {
-				position: absolute;
-				bottom: 10px;
-				right: 10px;
-				color: #555;
-				font-size: 12px;
-			}
-			#splash .unsplash a {
-				color: #666;
-			}
-			#splash .unsplash a:hover {
-				color: #ddd;
-			}
-
-			#splash h1, #splash h2 {
-				color: white;
-				font-size: 100px;
-				z-index: 10;
-				width: 100%;
-				margin: 0 auto;
-				position: relative;
-			}
-			#splash h1 {
-				margin-top: 160px;
-				margin-left: -5px;
-			}
-			#splash h2 {
-				font-size: 30px;
-				bottom: 6%;
-				color: #eee;
-			}
-			#splash h1:after, #splash h2:after {
-				position: absolute;
-				top: 3px;
-				left: 3px;
-				content: attr(data-title);
-				color: #000;
-				width: 100%;
-				z-index: -1;
-				opacity: 0.7;
-			}
-			#splash:after {
-				box-shadow: 0 -4px 4px 2px rgb(0, 0, 0, 0.7);
-				content: " ";
-			}
-			nav#navbar {
-				height: 60px;				
-				display: table;
-				width: 100%;
-				border-bottom: 4px solid rgb(3, 52, 181);
-				display: none;
-			}
-			#navbar h2 {
-				font-size: 30px;
-				padding: 0;
-				margin: 0;
-				vertical-align: middle;
-				display: table-cell;
-				padding: 0 10px;
-			}
-			#navbar .right {
-				display: table-cell;
-				width: auto;
-			}
-			.container {
-				width: 1280px;
-				max-width: 100%;
-				margin: 0 auto;
-			}
-
-
-
-
-			.links .link {
-				display: inline-block;
-				width: 31.5%;
-				height: 350px;
-				position: relative;
-				margin-right: 1.4%;
-				margin-bottom: 0.4%;
-				font-size: 0.7em;
-				overflow: hidden;
-				border: 1px solid #ccc;
-
-
-			}
-			.links .link h2 {
-
-			}
-			.links .link .content {
-				color: white;
-				position: absolute;
-				bottom: 0px;			
-				
-				left: 0;	
-				padding: 0 30px;
-				box-sizing: border-box;
-				background: rgba(0, 0, 0, 0.75);
-				line-height: 150%;
-				
-
-				
-			}
-			.links .link .content p {
-				overflow: hidden;
-				height: 0;
-				margin-bottom: 0;
-
-			}
-			.links .link .bg {
-
-				background-size: cover;
-				height: 100%;
-				-moz-transition: transform 0.2s ease;
-				-webkit-transition: transform 0.2s ease;
-				transition: transform 0.2s ease;
-				image-rendering: -webkit-optimize-contrast;
-
-			}
-			.links .link:hover .bg {
-				transform: scale(1.05);
-			}
-			.links .link:hover .content p {
-				height: auto;
-				margin-bottom: 15px;
-				
-			}
-			.links .learn-more {
-				text-decoration: underline;
-			}
-
-			footer {
-				font-size: 0.8em;
-				background: #222;
-				box-shadow: 0 50px 0px 50px #ddd;
-				padding: 5px 0;
-				color: white;
-			}
-			.pad {
-				margin: 40px 0;
-			}
-
-
-
-
-
-			ul.tools-list {
-				list-style: none;
-				padding: 0 20px;
-				margin: 40px 0;
-				margin-bottom: 80px;
-
-			}
-			ul.tools-list li {
-				padding: 0px;
-				border: 1px solid #ddd;
-				display: table;
-				margin: 0;
-				margin-bottom: 40px;
-				width: 100%;
-				overflow: hidden;
-			}
-			ul.tools-list li .thumbnail {
-				width: 360px;
-				height: 200px;
-				display: table-cell;
-				overflow: hidden;
-				border-right: 1px solid #ddd;
-			}
-			ul.tools-list li .thumbnail a {
-				background-size: cover;
-				height: 100%;
-				-moz-transition: transform 0.2s ease;
-				-webkit-transition: transform 0.2s ease;
-				transition: transform 0.2s ease;
-				image-rendering: -webkit-optimize-contrast;			
-				display: block;
-
-				
-				
-			}
-
-			ul.tools-list li .thumbnail a:hover {
-				transform: scale(1.05);
-			}
-
-
-
-			ul.tools-list li .content {
-				width: auto;
-				display: inline-block;
-				padding: 10px 30px;
-				display: table-cell;
-				box-sizing: border-box;
-				vertical-align: top;
-				background: #fbfbfb;
-			}
-			ul.tools-list li .content a {
-
-				position: relative;
-			}
-
-			a {
-				text-decoration: none;
-				color: #0275d8;				
-			}
-			a:hover {
-				color: #025aa5;
-				text-decoration: underline;
-			}
-
-		
-
-			hr {
-				border: 0;
-				border-bottom: 1px solid #ccc;
-				margin: 0;
-			}
-
-
-
-			section#intro-section {
-				background: #e6e6e6;
-				padding: 30px 0;
-				box-sizing: border-box;
-				margin-bottom: 40px;
-			}
-			#intro-section p {
-				margin: 0;
-			}
-			ul.tools-wip .thumbnail a {
-				pointer-events: none;
-			}
-			ul.tools-wip .content a {
-				text-decoration: none !important;
-				color: #222 !important;
-				pointer-events: none;
-			}
-
-
-
-		</style>
+		<link href='stylesheets/shared.css' rel='stylesheet' type='text/css'/>
 	</head>
 	<body>
-		<nav id="navbar"><!-- hidden -->
-			<h2>NLP Tools</h2>
-			<div class="right"></div>
-		</nav>
-		<div id="splash">
+
+		<div id="splash" class="parallax">
 			
-			
+			<div class="bg"></div>
+
 			<div class="container">
 				<h1 data-title="NLP Tools">NLP Tools</h1>
-				<h2 data-title="Useful tools for Natural Language Processing">Useful Tools for Natural Language Processing</h2>
+				<h2 data-title="Useful Tools for Natural Language Processing">Useful Tools for Natural Language Processing</h2>
 				<div class="unsplash">Photo found at <a href="https://unsplash.com/photos/Hv5vQ8AkbAs">Unsplash</a>.</div>
 			</div>
 		</div>
 		<main>
-			<section id="intro-section">
+			<section id="intro-section" class="grey-block">
 				<div class="container">
-					<p>This website contains several applications designed for anyone undertaking natural language processing. All software on this website is open source and freely available for download via GitHub.</p>
+					<p>This website contains several applications designed for anyone undertaking natural language processing. Currently we offer two different types of tools: <a href="#heading-annotation-tools">annotation tools</a>, made for annotating and creating data for use in machine learning, and <a href="#heading-annotation-tools">visualisation tools</a>, made for visualising the results of various NLP tasks.
+					<br/>
+
+					All software on this website is open source and freely available for download via GitHub.</p>
 				</div>
 			</section>
 			<div class="container">
@@ -301,15 +35,15 @@
 			
 
 				
-				<h2>Tools Available for Download</h2>
+				<h2 id="heading-annotation-tools">Annotation Tools</h2>
 				<hr/>
 				<ul class="tools-list">
 					<li>
 
 						<span class="thumbnail"><a href="redcoat" style="background-image: url('public/images/redcoat.png')"></a></span>
 						<span class="content">
-							<a href="redcoat"><h3 class="title">CoAT</h3></a>
-							<p class="description">CoAT is a collaborative annotation tool for labelling entity recognition data. Its keyboard-based interface allows for extremely rapid annotation.</p>
+							<a href="redcoat"><h3 class="title">Redcoat - Collaborative Annotation Tool</h3></a>
+							<p class="description">Redcoat is a collaborative annotation tool for labelling entity recognition data. Its keyboard-based interface allows for very rapid annotation. It is designed to be extremely easy to set up and distribute to multiple annotators.</p>
 						</span>
 					</li>
 				</ul>
@@ -317,33 +51,43 @@
 				
 
 
-				<h2>Works in Progress</h2>
+				<h2 id="heading-visualisation-tools">Visualisation Tools</h2>
 				<hr/>
-				<ul class="tools-list tools-wip">
-					<li>
+				<ul class="tools-list">
+					<li class="tool-wip">
 
 						<span class="thumbnail"><a href="lexvis" style="background-image: url('public/images/lexnorm-vis.png')"></a></span>
 						<span class="content">
-							<a href="lexvis"><h3 class="title">Lexnorm-Vis</h3></a>
-							<p class="description">Lexnorm-Vis is a simple web-based platform that visualises the results of lexical normalisation tasks.</p>
+							<a href="lexvis"><h3 class="title">Lexnorm-Vis (Work in Progress)</h3></a>
+							<p class="description">Lexnorm-Vis is a simple web-based platform that visualises the results of lexical normalisation tasks. The platform also provides statistics such as F1-Score, total correct/incorrect, and the F1-Score per unique token.</p>
 						</span>
 					</li>
-					<li>
+					<li class="tool-wip">
 
 						<span class="thumbnail"><a href="erg" style="background-image: url('public/images/erg.png')"></a></span>
 						<span class="content">
-							<a href="erg"><h3 class="title">ER Graph</h3></a>
-							<p class="description">ER (Entity Recognition) Graph visualises the links between entities. This allows domain experts to easy view the relationships between entities in the data.</p>
+							<a href="erg"><h3 class="title">ER Graph (Work in Progress)</h3></a>
+							<p class="description">ER (Entity Recognition) Graph visualises the links between entities in a dataset. Domain experts may interact with the visualisation to quickly discover links between entities that were previously obscured by the sheer volume of text in the original dataset.</p>
 						</span>
 					</li>
 				</ul>
 
-				<h2>Call for Tools</h2>
-				<hr/>
-				<p>If you have any tools you would like us to showcase here, please let us know at <a href="#">example-email-address</a>.
-				<div style="height: 300px"></div>
+				
+		
 
 			</div>
+			<section class="grey-block">
+				<div class="container">
+
+					<h2>About us</h2>
+					<hr/>
+					<p>We are...</p>
+					<br/>
+					<h2>Have an NLP-related tool?</h2>
+					<hr/>
+					<p>If you have any tools you would like us to showcase here, please let us know at <a href="#">example-email-address</a>.</p>
+				</div>
+			</section>			
 
 		</main>
 		<footer>
