@@ -31,13 +31,19 @@ a:hover {
 	
 
 }
+#splash.move-down {
+	height: 280px;
+}
+#splash.move-down h1 {
+	margin-top: 60px;
+}
 #splash.parallax .bg {
 	position: fixed;
 }
 
 #splash.parallax.move-down .bg {
 	top: 0px;
-	height: 400px;
+	height: 340px;
 }
 #splash .bg {
 	position: absolute;
@@ -217,6 +223,7 @@ ul.tools-list li .thumbnail {
 	display: table-cell;
 	overflow: hidden;
 	border-right: 1px solid #ddd;
+	position: relative;
 }
 ul.tools-list li .thumbnail a {
 	background-size: cover;
@@ -226,6 +233,10 @@ ul.tools-list li .thumbnail a {
 	transition: transform 0.2s ease;
 	image-rendering: -webkit-optimize-contrast;			
 	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
 
 	
 	
