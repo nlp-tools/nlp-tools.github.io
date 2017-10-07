@@ -1,0 +1,120 @@
+h1, h2.big-heading {
+	font-size: 3em;
+	margin-bottom: 0;
+	margin-top: 0;
+
+}
+h2.big-heading {
+	padding: 30px 0;
+}
+main#tool-page .tool-table {
+	display: table;
+	min-height: 85vh;
+}
+/*
+section#tool-description {
+	padding: 20px 80px;
+	width: 65%;
+	display: table-cell;
+	padding-left: 200px;				
+}
+*/
+#tool-page hr {
+	margin-bottom: 20px;
+}
+
+section#tool-screenshots {
+	padding: 20px 80px;
+	
+	background: #2a2a2a;
+	color: white;
+
+	/*
+	width: 35%;
+	display: table-cell;
+	padding-right: 200px;
+	*/
+}
+
+
+
+section#tool-screenshots hr {
+	border: 0;
+	border-top: 1px solid #444;
+}
+section#live-demo {
+	background: white;
+	padding: 20px 200px;
+}
+
+
+.screenshot-gallery figure {
+	padding: 0;
+	margin: 0;
+	margin-top: 30px;
+	width: 50%;
+	display: inline-block;
+	vertical-align: top;
+	
+	box-sizing: border-box;
+}
+.screenshot-gallery figcaption {
+	padding: 15px 0;
+	color: #eee;
+	margin-bottom: 20px;
+	font-size: 16px;
+	line-height: 150%;
+	display: block;
+	text-align: center;
+}
+.screenshot-gallery .main-screenshot .screenshot {
+	width: 100%;
+	height: 320px;
+	background-size: cover;
+	background-position: center;
+	image-rendering: -webkit-optimize-contrast;	
+}
+.screenshot-gallery .main-screenshot:nth-child(odd) {
+	padding-right: 15px;
+}
+.screenshot-gallery .main-screenshot:nth-child(even) {
+	padding-left: 15px;
+}
+.screenshot-gallery ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+.screenshot-gallery .other-screenshots .screenshot {
+	display: inline-block;
+	width: 48%;
+	margin-right: 2%;
+	height: 150px;
+	background-size: cover;
+	background-position: center;
+	image-rendering: -webkit-optimize-contrast;
+	margin-bottom: 2%;
+	box-sizing: border-box;
+	border: 2px solid #2a2a2a;
+	cursor: pointer;	
+}
+.screenshot-gallery .other-screenshots .screenshot:hover {
+	border: 2px solid #0275d8;
+
+}
+.screenshot-gallery .other-screenshots .screenshot:nth-child(even) {
+	margin-right: 0;
+}
+.wide-container {
+	width: 1600px;
+	margin: 0 auto;
+}
+
+#tool-description h2:not(.big-heading) {
+	padding: 30px 0 10px 0;
+}
+section {
+	padding-bottom: 40px;
+}
