@@ -18,6 +18,7 @@
 
 	</head>
 	<body>
+		<!--
 		<nav id="navbar">
 
 			<div class="bg"></div>
@@ -26,10 +27,11 @@
 			<div class="right"></div>
 			</div>
 		</nav>
+		-->
 
-		<div id="splash" class="parallax move-down">
+		<div id="splash" class="parallax move-text-up">
 			
-			<div class="bg" style="background-image: url('../public/images/redcoat-splash.jpg')"></div>
+			<div class="bg" id="splash-sticky-bg" style="background-image: url('../public/images/redcoat-splash.jpg')"></div>
 
 			<div class="container">
 				<h1 data-title="Redcoat">Redcoat</h1>
@@ -37,20 +39,41 @@
 				<!--<div class="unsplash">Photo found at <a href="https://unsplash.com/photos/Hv5vQ8AkbAs">Unsplash</a>.</div>-->
 			</div>
 		</div>
+		<nav id="subpage-nav">
+			<div class="logo"><h3><a href="/redcoat">Redcoat</a></h3></div>
+
+			<div class="container">
+				<ul class="nav">					
+					<li class="current"><a href="#">Home</a></li><!--
+					--><li><a href="#">Implementation</a></li><!--
+					--><li><a href="#">Screenshots</a></li><!--
+					--><li><a href="#">Live Example</a></li><!--
+				-->
+				</ul>
+
+
+			</div>
+
+
+		</nav>
 
 
 		<main id="tool-page">
+			<!--
 			<section id="intro-section" class="grey-block">
 				<div class="container">
 					<p>This tool is currently in development. We will provide a link to the GitHub repository once it is complete.</p>
 				</div>
 			</section>
+			-->
 
 			<div class="container">
 
 				<section id="tool-description">
-					<h2 class="big-heading">Description</h2>
-					<hr/>
+					<!--<h2 class="big-heading">Description</h2>
+					<hr/>-->
+
+			
 					<p>Redcoat is a collaborative annotation tool for labelling entity recognition data. Its keyboard-based interface allows for very rapid annotation. It is designed to be extremely easy to set up and distribute to multiple annotators.</p>
 					<p>Redcoat has three primary goals:</p>
 					<ol>
@@ -88,6 +111,7 @@
 				</div>
 			</section>
 			-->
+			<!--
 			<section id="tool-screenshots">
 				<div class="container">
 					
@@ -95,15 +119,22 @@
 					<hr/>
 
 					<div class="screenshot-gallery">
+					-->
+						<!--
 
 						<figure class="main-screenshot">
 							<div class="screenshot" style="background-image: url('../public/images/redcoat.png')"></div>
 							<figcaption>Redcoat's simple tagging interface. Each colour represents a different entity class.</figcaption>
-						</figure><!--
-						--><figure class="main-screenshot">
+						</figure>
+					-->
+
+						<!--
+						-->
+						<!--<figure class="main-screenshot">
 							<div class="screenshot" style="background-image: url('../public/images/redcoat-setup-2.png')"></div>
 							<figcaption>The project setup page makes it easy to set up a new annotation project.</figcaption>
 						</figure>
+					-->
 						<!--
 						<ul class="other-screenshots">
 							<li class="screenshot" style="background-image: url('../public/images/redcoat.png')"></li>
@@ -113,18 +144,50 @@
 						</ul>
 						-->
 
-
+					<!--
 
 					</div>
 
 
 				</div>
 			</section>
+			-->
 		</main>
 		<footer>
 			<div class="container">
-				<p>&copy;NLP Tools 2017.</p>
+				<p style="float: left"><a href="/">Home</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/redcoat">Redcoat</a></p>
+				<p style="float: right">&copy;NLP Tools 2017.</p>
 			</div>
 		</footer>
 	</body>
+
+	<script>
+
+		var stickyNav = document.getElementById("subpage-nav")
+		var stickySplashBg = document.getElementById("splash-sticky-bg")
+		var navIsStuck = false
+
+		var navPosY = stickyNav.offsetTop;
+
+	
+
+		window.onscroll = function() { checkNav() }
+		function checkNav() {
+			var bodyScroll = document.body.scrollTop || document.documentElement.scrollTop
+			
+			if(bodyScroll > navPosY) {
+				if(!navIsStuck) {
+					navIsStuck = true
+					stickyNav.classList.add("sticky")
+					stickySplashBg.classList.add("sticky")
+				}
+			} else {
+				if(navIsStuck) {
+					navIsStuck = false
+					stickyNav.classList.remove("sticky")
+					stickySplashBg.classList.remove("sticky")
+				}				
+			}
+		}
+	</script>
 </html>
