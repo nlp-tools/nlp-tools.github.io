@@ -122,7 +122,7 @@ section {
 
 
 .pad-hor {
-	padding: 0 35px;
+	padding: 0 40px;
 	padding-right: 0;
 }
 
@@ -142,6 +142,9 @@ nav#subpage-nav ul.nav li.nav-download a {
 	border-radius: 6px;
 	padding: 0 16px;
 	box-shadow: inset 1px 1px rgba(0, 0, 0, 0.9);
+}
+nav#subpage-nav ul.nav li.nav-download a:hover {
+	box-shadow: none;
 }
 
 
@@ -218,19 +221,20 @@ nav#subpage-nav ul.nav li a {
 
 }
 
-nav#subpage-nav ul.nav li a:hover, nav#subpage-nav ul.nav li.current a {
-	text-decoration: none;
-	color: white;
+nav#subpage-nav ul.nav li.current a {
 	background: linear-gradient(rgba(255, 225, 225, 0.18), rgba(255, 225, 225, 0.12));
 }
-nav#subpage-nav ul.nav li a:active {
+nav#subpage-nav ul.nav li a:hover {
+	text-decoration: none;
+	color: white;
+	background: linear-gradient(rgba(255, 225, 225, 0.24), rgba(255, 225, 225, 0.18));
+}
+
+nav#subpage-nav ul.nav li a:active, nav#subpage-nav ul.nav li a:focus {
 
 	background: rgba(255, 225, 225, 0.38);
 }
 
-nav#subpage-nav ul.nav li:nth-child(odd):not(:last-child):after {
-	right: -1px;
-}
 
 
 
@@ -241,6 +245,10 @@ nav#subpage-nav ul.nav li:not(:last-child):not(.no-right-line):after {
 	height: 60%;
 	border-right: 1px solid rgba(255, 255, 255, 0.2);
 	content: " ";
+}
+
+nav#subpage-nav ul.nav li:nth-child(odd):not(:last-child):after {
+	right: -1px;
 }
 
 
@@ -271,8 +279,23 @@ section.documentation-section h2:before {
     content: counter(h2counter) ".\0000a0\0000a0";
     counter-increment: h2counter;
     counter-reset: h3counter;
+    float:left;
+    width: 40px;
 }
 section.documentation-section h3:before {
     content: counter(h2counter) "." counter(h3counter) ".\0000a0\0000a0";
     counter-increment: h3counter;
+    float:left;
+    width: 40px;
+}
+
+
+
+
+
+img.redcoat-icon {
+	width: 120px;
+	stroke: white;
+	float: left;
+	display: inline-block;
 }
