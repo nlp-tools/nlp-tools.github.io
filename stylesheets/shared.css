@@ -5,7 +5,7 @@ body, html {
 	
 	color: #111;
 }
-p, li, code {
+p, li, code, figcaption {
 	line-height: 200%;
 	font-size: 19px;
 }
@@ -76,6 +76,7 @@ a:hover {
 	#splash #splash-sticky-bg.sticky {
 		background-position: bottom;		
 	}
+
 }
 
 
@@ -216,15 +217,32 @@ a:hover {
 	text-decoration: underline;
 }
 
+footer .footer-title {
+	color: #777;
+	margin-bottom: -10px;
+	font-size: 17px;
+	
+}
+
 footer {
-	font-size: 0.8em;
+	text-shadow: 1px 1px 2px #111;
 	background: #222;
 	box-shadow: 0 50px 0px 50px #222;
 	padding: 5px 0;
 	color: white;
 }
+footer p {
+	font-size: 17px;
+}
 footer a, footer a:hover {
 	color: white;
+}
+footer .footer-links {
+	float: left;
+}
+footer .footer-copyright {
+	color: #777;
+	float: right;
 }
 .pad {
 	margin: 40px 0;
@@ -374,4 +392,10 @@ nav#navbar {
 #navbar .right {
 	display: table-cell;
 	width: auto;
+}
+
+
+
+.merriweather {
+	font-family: "Merriweather", serif;
 }
