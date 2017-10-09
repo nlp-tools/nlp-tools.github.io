@@ -80,6 +80,9 @@ a:hover {
 }
 
 
+#splash.only-background {
+	height: 60px;
+}
 
 #splash.bg.faded {
 	opacity: 0.35;

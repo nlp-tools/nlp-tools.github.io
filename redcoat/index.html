@@ -8,14 +8,7 @@
 		<link href='../stylesheets/shared.css' rel='stylesheet' type='text/css'/>
 		<link href='../stylesheets/subpages.css' rel='stylesheet' type='text/css'/>
 
-
-
-		<style>
-
-
-
-
-		</style>
+		<script src="../public/javascripts/jquery-3.2.1.min.js" type="text/javascript"></script>
 
 	</head>
 	<body>
@@ -46,7 +39,7 @@
 			<div class="bg" id="splash-sticky-bg" style="background-image: url('../public/images/redcoat-splash.jpg')"></div>
 
 			<div class="container">
-				<a style="text-decoration: none;" href="/redcoat">
+				<a style="text-decoration: none;" href="">
 					<h1 data-title="Redcoat" class="merriweather splash-title">Redcoat</h1>
 					<h2 data-title="Collaborative Annotation Tool">Collaborative Annotation Tool</h2>
 				</a>
@@ -54,13 +47,13 @@
 			</div>
 		</div>
 		<nav id="subpage-nav">
-			<div class="logo merriweather"><h3><a href="/redcoat">Redcoat</a></h3></div>
+			<div class="logo merriweather"><h3><a href="">Redcoat</a></h3></div>
 
 			<div class="container">
 				<ul class="nav">					
-					<li class="current"><a href="#">Home</a></li><!--
-					--><li><a href="/redcoat/user-guide">User Guide</a></li><!--
-					--><li class="no-right-line"><a href="/redcoat/live-demo">Live Demo</a></li><!--
+					<li class="current"><a href="">Home</a></li><!--
+					--><li><a href="user-guide">User Guide</a></li><!--
+					--><li class="no-right-line"><a href="live-demo">Live Demo</a></li><!--
 					--><li class="nav-download"><a href="https://github.com/githubtraining/hellogitworld/archive/master.zip"><i class="demo-icon icon-download" style="margin-right: 5px"></i>Download</a></li><!--
 				-->
 				</ul>
@@ -73,14 +66,6 @@
 
 
 		<main id="tool-page">
-			<!--
-			<section id="intro-section" class="grey-block">
-				<div class="container">
-					<p>This tool is currently in development. We will provide a link to the GitHub repository once it is complete.</p>
-				</div>
-			</section>
-			-->
-
 			<div class="container">
 
 				<section id="tool-description">
@@ -124,57 +109,6 @@
 				</section>
 			</div>
 
-			<!--
-			<section id="live-demo">
-				<div class="container">
-					<h2 class="big-heading">Live Demo</h2>
-					<hr/>
-					<p>Coming soon!</p>
-					<br/><br/><br/>
-				</div>
-			</section>
-			-->
-			<!--
-			<section id="tool-screenshots">
-				<div class="container">
-					
-					<h2 class="big-heading">Screenshots</h2>
-					<hr/>
-
-					<div class="screenshot-gallery">
-					-->
-						<!--
-
-						<figure class="main-screenshot">
-							<div class="screenshot" style="background-image: url('../public/images/redcoat.png')"></div>
-							<figcaption>Redcoat's simple tagging interface. Each colour represents a different entity class.</figcaption>
-						</figure>
-					-->
-
-						<!--
-						-->
-						<!--<figure class="main-screenshot">
-							<div class="screenshot" style="background-image: url('../public/images/redcoat-setup-2.png')"></div>
-							<figcaption>The project setup page makes it easy to set up a new annotation project.</figcaption>
-						</figure>
-					-->
-						<!--
-						<ul class="other-screenshots">
-							<li class="screenshot" style="background-image: url('../public/images/redcoat.png')"></li>
-							<li class="screenshot" style="background-image: url('../public/images/redcoat.png')"></li>
-							<li class="screenshot" style="background-image: url('../public/images/redcoat.png')"></li>
-							<li class="screenshot" style="background-image: url('../public/images/redcoat.png')"></li>
-						</ul>
-						-->
-
-					<!--
-
-					</div>
-
-
-				</div>
-			</section>
-			-->
 		</main>
 		<footer>
 			<div class="container">
@@ -185,75 +119,5 @@
 		</footer>
 	</body>
 
-	<script>
-
-		var stickyNav = document.getElementById("subpage-nav")
-		var stickySplashBg = document.getElementById("splash-sticky-bg")
-		var stickyGithubCorner = document.getElementById("github-corner")
-		var navIsStuck = false
-		var ghcIsStuck = false
-
-		var navPosY = stickyNav.offsetTop;
-
-		window.onscroll = function() { checkNav() }
-		function checkNav() {
-			var bodyScroll = document.body.scrollTop || document.documentElement.scrollTop
-			
-			// Ensure the Github Corner doesn't overlap the main page
-			if(bodyScroll > (navPosY - 20)) {
-				if(!ghcIsStuck) {
-					ghcIsStuck = true
-					stickyGithubCorner.classList.add("sticky")
-				}
-			} else {
-				if(ghcIsStuck) {
-					ghcIsStuck = false
-					stickyGithubCorner.classList.remove("sticky")
-				}	
-			}
-
-			// Fix the navbar to the top of the page when scrolling past the splash
-			if(bodyScroll > navPosY) {
-				if(!navIsStuck) {
-					navIsStuck = true
-					stickyNav.classList.add("sticky")
-					stickySplashBg.classList.add("sticky")
-					
-				}
-			} else {
-				if(navIsStuck) {
-					navIsStuck = false
-					stickyNav.classList.remove("sticky")
-					stickySplashBg.classList.remove("sticky")
-					
-				}				
-			}
-		}
-
-
-	/*
-    var xmlhttp = new XMLHttpRequest();
-    rt = null
-
-    xmlhttp.onreadystatechange = function() {
-        if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
-           if (xmlhttp.status == 200) {
-               rt = JSON.parse(xmlhttp.responseText);
-               sha = rt[0].
-           }
-           else if (xmlhttp.status == 400) {
-              alert('There was an error 400');
-           }
-           else {
-               alert('something else other than 200 was returned');
-           }
-        }
-    };
-
-    xmlhttp.open("GET", "https://api.github.com/repos/rails/rails/commits", true);
-    xmlhttp.send();
-	*/
-
-
-	</script>
+	<script src="../public/javascripts/sticky-nav.js" type="text/javascript"></script>
 </html>
