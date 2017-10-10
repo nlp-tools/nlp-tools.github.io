@@ -5,7 +5,7 @@ body, html {
 	
 	color: #111;
 }
-p, li, code, figcaption {
+p, li, code, figcaption, table {
 	line-height: 200%;
 	font-size: 19px;
 }
@@ -154,7 +154,7 @@ a:hover {
 	margin: 0 auto;
 
 }
-@media(min-width: 1280px) {
+@media(max-width: 1280px) {
 	.container {
 		width: 992px;
 	}

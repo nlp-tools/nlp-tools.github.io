@@ -70,29 +70,33 @@
 		</nav>
 
 		<main id="tool-page">
-			<div class="container">
+			<div class="container documentation-container">
 				<section id="tool-description" class="documentation-section" style="min-height: 100vh">
 					<h1 class="big-heading">Redcoat User Guide</h1>
 						<hr/>
 
 
-					<p>Redcoat is a Node.js application. It is designed to run on a webserver so that annotators can access it from their own computers. The installation process is outlined below.</p>
+					<p>Redcoat is a Node.js application. It is designed to run on a webserver so that annotators can access it from their own computers. The installation and setup process is outlined below.</p>
 
 					<h2 id="installing-nodejs">Installing Node.js</h2>
 
 					<div class="pad-hor">
 						<p>The first step is to install <a href="https://nodejs.org/en/">Node.js</a>.</p>
-						<p><strong><i class="icon-right-open"></i>If you are using Ubuntu</strong>, you can install Node.js and npm by using the following commands:</p>
-						<code class="code-block">
-							<span class="dollar">$</span> sudo apt-get update<br/>
-							<span class="dollar">$</span> sudo apt-get install nodejs<br/>
-							<span class="dollar">$</span> sudo apt-get install npm
-						</code>
-						<p><strong><i class="icon-right-open"></i>If you are using Windows</strong>, simply download the Windows installer and follow the instructions. Ensure that npm is also installed (it should be included with the installation by default).</p>
-						<p><strong><i class="icon-right-open"></i>If you are using Mac OS X</strong>, you can download an installer from the Node.js website. Alternatively, the following command should install both node.js and npm using homebrew:</p>
-						<code class="code-block">
-							<span class="dollar">$</span> brew install node<br/>
-						</code>
+
+						<ul>
+							<li><strong>If you are using Ubuntu</strong>, you can install Node.js and npm by using the following commands:</p>
+								<code class="code-block">
+									<span class="dollar">$</span> sudo apt-get update<br/>
+									<span class="dollar">$</span> sudo apt-get install nodejs<br/>
+									<span class="dollar">$</span> sudo apt-get install npm
+								</code>
+							</li>
+							<li><strong>If you are using Windows</strong>, simply download the Windows installer and follow the instructions. Ensure that npm is also installed (it should be included with the installation by default).</li>
+							<li><strong>If you are using Mac OS X</strong>, you can download an installer from the Node.js website. Alternatively, the following command should install both node.js and npm using homebrew:<br/>
+							<code class="code-block">
+								<span class="dollar">$</span> brew install node<br/>
+							</code>
+							</li>
 						<p>For additional installation instructions, please see the <a href="https://nodejs.org/en/">Node.js</a> website.</p>
 					</div>
 
@@ -110,7 +114,7 @@
 							<span class="dollar">$</span> npm start<br/>
 						</code>
 						<h3 id="creating-the-admin-account">Creating the Administrator Account</h3>
-							<p class="pad-hor">If this is the first time running the application, you'll be greeted with a message asking for a username and password for the Administrator account. This is a necessary step to ensure that only you are able to set up your project through the browser.</p>
+							<p class="pad-hor">If this is your first time running the application, you'll be greeted with a message asking for a username and password for the Administrator account. This is a necessary step to ensure that only you are able to set up your project through the browser.</p>
 							
 
 						<h3 id="configuring-smtp-details">Configuring SMTP Details</h3>
@@ -132,7 +136,62 @@
 					</div>
 
 					<h2 id="setting-up-a-new-project">Setting up a new project</h2>
-					<p class="pad-hor">Nulla lacus tellus, malesuada quis hendrerit sit amet, maximus id justo. Nunc pharetra tincidunt lectus, vel condimentum dui lobortis eget. Morbi sit amet blandit arcu, nec consectetur mi. Nulla at neque a ipsum vulputate ornare. Nunc venenatis, nulla sed fermentum dapibus, nisi est dapibus eros, vitae porttitor dolor neque nec augue. Phasellus dignissim tempus porttitor. Maecenas eget leo ut libero eleifend porttitor aliquet id felis. Mauris fermentum velit a ligula malesuada egestas. Fusce feugiat a sem ut pulvinar. Nulla sed pharetra sapien, vitae semper eros. Mauris urna ex, bibendum ac nibh convallis, placerat ullamcorper odio.</p>
+					<div class="pad-hor">
+						<p>Once the server is up and running, you can continue the rest of the setup process in a browser such as Firefox or Chrome.</p>
+						<p>If you are running the application on your own computer, navigate to <code>localhost:3000</code> in your browser.</p>
+						<p>If you are running the application on a web server (and have set up the server using something like ssh), you can (optionally) close the ssh connection and navigate to <code>&lt;your server's IP address&gt;:3000</code> in your computer's browser.</p>
+						<p>In your browser you can log in using the administrator account details you entered earlier and begin setting up a project. The setup page is fairly self-explanatory, but we have included the required details here.</p>
+						<table id="setup-project-table">
+							<thead>
+								<tr>
+									<th>Section</th>
+									<th>Required Information</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><strong>Project Details</strong></td>
+									<td>Enter the <strong>project name</strong> and a <strong>brief description</strong> of the project. The description will appear in the automated mailouts if you decide to use them.</td>
+								</tr>
+								<tr>
+									<td><strong>Dataset</strong></td>
+									<td>Determine whether your data has already been tokenized. There are two options:
+									<ul>
+										<li><strong>Yes, my data has been tokenized:</strong> upload your tokenized data. The dataset must be saved as a .txt file. Each token within your data must be separated by a newline, and each record must be separated by an additional newline. <a href="../../public/files/example_tokenized.txt" download>Click here</a> to download a small example file.</li>
+										<li><strong>No, my data has not been tokenized:</strong> upload your untokenized data. The dataset must be saved as a .txt file. Each record within your data must be separated by a new line. <a href="../../public/files/example_untokenized.txt" download>Click here</a> to download a small example file. Your data will be tokenized using regular expression parsing.</li>
+										
+									</ul>
+									<em>Please note, it's highly recommended that you provide your own tokenized data. Providing untokenized data is only recommended for quickly trying out Redcoat.</em></td>
+								</tr>
+								<tr>
+									<td><strong>Entity Categories</strong></td>
+									<td>Determine how you would prefer to upload the entity categories. There are three options to choose from:
+										<ul>
+											<li><strong>My entity categories are saved in a file:</strong> test</li>
+											<li><strong>I'll list the entity categories here:</strong> test</li>
+											<li><strong>I'm using the standard 4 class model for Named Entity Recognition:</strong> test</li>
+										</li>
+									</td>
+								</tr>
+								<tr>
+									<td><strong>Distribution</strong></td>
+									<td>Determine how you would like to distribute the annotation task. There are four options to choose from:
+										<ul>
+											<li><strong>I'll complete the annotation task myself:</strong> test</li>
+											<li><strong>I'd like a list of codes that I will send to the annotators myself:</strong> test</li>
+											<li><strong>I'd like the server to email codes to the annotators automatically:</strong> test</li>
+											<li><strong>I've provided SMTP credentials and want to email the codes using them:</strong> test</li>
+										</ul>
+									</td>
+								</tr>
+							</tbody>
+
+						</table>
+
+
+
+						</p>
+					</div>
 					<div class="pad-hor">
 						<h3 id="distributing-your-project">Distributing your annotation project</h3>
 						<p class="pad-hor">Pellentesque facilisis felis non efficitur scelerisque. Curabitur semper nec tortor id consectetur. Ut tempor dolor a sapien ornare, tincidunt porttitor tellus pellentesque. Proin dignissim maximus dolor non placerat. Nulla sagittis fringilla mi, eget vulputate urna laoreet ac. Proin rutrum odio sapien, vulputate cursus felis gravida ut.</p>
