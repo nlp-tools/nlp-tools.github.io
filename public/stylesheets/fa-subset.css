@@ -1,11 +1,11 @@
 @font-face {
-  font-family: 'font-awesome-subset';
-  src: url('../font/font-awesome-subset.eot?78133999');
-  src: url('../font/font-awesome-subset.eot?78133999#iefix') format('embedded-opentype'),
-       url('../font/font-awesome-subset.woff2?78133999') format('woff2'),
-       url('../font/font-awesome-subset.woff?78133999') format('woff'),
-       url('../font/font-awesome-subset.ttf?78133999') format('truetype'),
-       url('../font/font-awesome-subset.svg?78133999#font-awesome-subset') format('svg');
+  font-family: 'fa-subset';
+  src: url('../font/fa-subset.eot?40014736');
+  src: url('../font/fa-subset.eot?40014736#iefix') format('embedded-opentype'),
+       url('../font/fa-subset.woff2?40014736') format('woff2'),
+       url('../font/fa-subset.woff?40014736') format('woff'),
+       url('../font/fa-subset.ttf?40014736') format('truetype'),
+       url('../font/fa-subset.svg?40014736#fa-subset') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -14,14 +14,14 @@
 /*
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
-    font-family: 'font-awesome-subset';
-    src: url('../font/font-awesome-subset.svg?78133999#font-awesome-subset') format('svg');
+    font-family: 'fa-subset';
+    src: url('../font/fa-subset.svg?40014736#fa-subset') format('svg');
   }
 }
 */
  
  [class^="icon-"]:before, [class*=" icon-"]:before {
-  font-family: "font-awesome-subset";
+  font-family: "fa-subset";
   font-style: normal;
   font-weight: normal;
   speak: none;
@@ -56,3 +56,4 @@
 }
  
 .icon-download:before { content: '\e800'; } /* '' */
+.icon-right-open:before { content: '\e801'; } /* '' */

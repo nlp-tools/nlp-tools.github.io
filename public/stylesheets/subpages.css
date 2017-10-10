@@ -125,6 +125,9 @@ section {
 	padding: 0 40px;
 	padding-right: 0;
 }
+ol.pad-hor {
+	padding-left: 60px;
+}
 
 
 nav#subpage-nav ul.nav li.nav-download {
@@ -269,7 +272,7 @@ figure figcaption {
 
 section#tool-description.documentation-section h2, section#tool-description.documentation-section h3, section#tool-description.documentation-section h4 {
 	padding-top: 80px; 
-	margin-top: -60px;
+	margin-top: -50px;
 }
 
 section.documentation-section {
@@ -343,6 +346,7 @@ nav#sidenav ul li:before {
     font-size: 0.8em;
     font-weight: bold;
     color: #333;
+    height: 30px;
 }
 
 nav#sidenav ul li ul {
@@ -354,4 +358,16 @@ nav#sidenav ul li ul li:before {
     counter-increment: snli2counter;
     float:left;
     width: 40px;
+}
+
+
+
+code.code-block {
+	display: block;
+	background: #e6e6e6;
+	padding: 10px 40px;
+	margin: 19px 0;
+}
+code .dollar {
+	color: #999;
 }

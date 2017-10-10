@@ -4,9 +4,9 @@
 		<title>User Guide | Redcoat | NLP Tools</title>
 		<!--<base href = "https://nlp-tools.org"/>-->
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700|Merriweather:400,700 ' rel='stylesheet' type='text/css'/>
-		<link href='../../stylesheets/font-awesome-subset.css' rel='stylesheet' type='text/css'/>
-		<link href='../../stylesheets/shared.css' rel='stylesheet' type='text/css'/>
-		<link href='../../stylesheets/subpages.css' rel='stylesheet' type='text/css'/>
+		<link href='../../public/stylesheets/fa-subset.css' rel='stylesheet' type='text/css'/>
+		<link href='../../public/stylesheets/shared.css' rel='stylesheet' type='text/css'/>
+		<link href='../../public/stylesheets/subpages.css' rel='stylesheet' type='text/css'/>
 
 	</head>
 	<body>
@@ -37,7 +37,7 @@
 					<li><a href="../">Home</a></li><!--
 					--><li class="current"><a href="">User Guide</a></li><!--
 					--><li class="no-right-line"><a href="../live-demo">Live Demo</a></li><!--
-					--><li class="nav-download"><a href="https://github.com/githubtraining/hellogitworld/archive/master.zip"><i class="demo-icon icon-download" style="margin-right: 5px"></i>Download</a></li><!--
+					--><li class="nav-download"><a href="https://github.com/githubtraining/hellogitworld/archive/master.zip"><i class="demo-icon icon-download"></i>Download</a></li><!--
 				-->
 				</ul>
 
@@ -51,8 +51,13 @@
 			<h3>Redcoat User Guide</h3>
 			<hr/>
 			<ul id="sidenav-ol">
-				<li><a href="#installation">Installation</a></li>
-				<li><a href="#running-the-node-server">Running the Node Server</a></li>
+				<li><a href="#installing-nodejs">Installing Node.js</a></li>
+				<li><a href="#running-the-redcoat-application">Running the Redcoat Application</a>
+					<ul>
+						<li><a href="#creating-the-admin-account">Creating the Administrator Account</a></li>
+						<li><a href="#configuring-smtp-details">Configuring SMTP Details</a></li>
+					</ul>
+				</li>
 				<li><a href="#setting-up-a-new-project">Setting up a new project</a>
 					<ul>
 						<li><a href="#distributing-your-project">Distributing your annotation project</a></li>
@@ -71,12 +76,60 @@
 						<hr/>
 
 
+					<p>Redcoat is a Node.js application. It is designed to run on a webserver so that annotators can access it from their own computers. The installation process is outlined below.</p>
 
-					<h2 id="installation">Installation</h2>
-					<p class="pad-hor">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus lacus vitae augue gravida, et condimentum lectus egestas. Curabitur sollicitudin velit ut consequat luctus. Sed a viverra diam. Nullam augue mauris, euismod vitae justo ac, ultricies bibendum lectus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque ullamcorper lorem nisi, quis pretium nibh vehicula finibus. Integer nibh est, molestie nec nisl eu, fringilla cursus ex. Duis est ex, porttitor nec mi ut, iaculis maximus nisl. Quisque vel ornare sem, non accumsan purus.</p>
+					<h2 id="installing-nodejs">Installing Node.js</h2>
 
-					<h2 id="running-the-node-server">Running the Node Server</h2>
-					<p class="pad-hor">Pellentesque facilisis felis non efficitur scelerisque. Curabitur semper nec tortor id consectetur. Ut tempor dolor a sapien ornare, tincidunt porttitor tellus pellentesque. Proin dignissim maximus dolor non placerat. Nulla sagittis fringilla mi, eget vulputate urna laoreet ac. Proin rutrum odio sapien, vulputate cursus felis gravida ut. Quisque quis nunc placerat, interdum nulla a, vehicula purus. Donec consectetur magna nisl, quis porttitor eros dapibus vitae. Proin purus mauris, molestie nec gravida nec, tempus vitae eros. Maecenas nisi diam, venenatis sit amet fringilla sed, tempus in velit. Nunc efficitur consequat ex ac iaculis. Cras rutrum condimentum laoreet. Quisque euismod vestibulum nulla eu malesuada. Mauris fermentum ex arcu, vitae cursus lorem volutpat vel. Sed ullamcorper dui at nibh pretium aliquam.</p>
+					<div class="pad-hor">
+						<p>The first step is to install <a href="https://nodejs.org/en/">Node.js</a>.</p>
+						<p><strong><i class="icon-right-open"></i>If you are using Ubuntu</strong>, you can install Node.js and npm by using the following commands:</p>
+						<code class="code-block">
+							<span class="dollar">$</span> sudo apt-get update<br/>
+							<span class="dollar">$</span> sudo apt-get install nodejs<br/>
+							<span class="dollar">$</span> sudo apt-get install npm
+						</code>
+						<p><strong><i class="icon-right-open"></i>If you are using Windows</strong>, simply download the Windows installer and follow the instructions. Ensure that npm is also installed (it should be included with the installation by default).</p>
+						<p><strong><i class="icon-right-open"></i>If you are using Mac OS X</strong>, you can download an installer from the Node.js website. Alternatively, the following command should install both node.js and npm using homebrew:</p>
+						<code class="code-block">
+							<span class="dollar">$</span> brew install node<br/>
+						</code>
+						<p>For additional installation instructions, please see the <a href="https://nodejs.org/en/">Node.js</a> website.</p>
+					</div>
+
+
+					<h2 id="running-the-redcoat-application">Running the Redcoat Application</h2>
+					<div class="pad-hor">
+						<p>Download the latest version of Redcoat <a style="color: red" href="https://github.com/githubtraining/hellogitworld/archive/master.zip">here</a>.</p>
+						<p>Unzip the folder and navigate to the folder's location using command prompt/terminal. You'll then need to install the required node packages using npm:</p>
+						<code class="code-block">
+							<span class="dollar">$</span> npm install<br/>
+						</code>
+						<p>This may take some time depending on the speed of your internet connection.</p>
+						<p>Once the packages have been installed, you should be able to run the application using:</p>
+						<code class="code-block">
+							<span class="dollar">$</span> npm start<br/>
+						</code>
+						<h3 id="creating-the-admin-account">Creating the Administrator Account</h3>
+							<p class="pad-hor">If this is the first time running the application, you'll be greeted with a message asking for a username and password for the Administrator account. This is a necessary step to ensure that only you are able to set up your project through the browser.</p>
+							
+
+						<h3 id="configuring-smtp-details">Configuring SMTP Details</h3>
+						<div class="pad-hor">
+							<p>You'll also be asked whether you want to send out invitations to annotators using your own STMP server.</p>
+
+							<p><strong><i class="icon-right-open"></i>If you answer with 'y'</strong>, you'll be able to enter the host, port, and authentication credentials for your SMTP server. Sending out your annotation project using your own SMTP server will be enabled as an option when setting up your project. </p>
+
+							<p>For example, if you have a Gmail account, you can Gmail's SMTP server by entering the following: </p>
+							<code class="code-block">
+								<strong>SMTP server name:</strong> smtp.gmail.com<br/>
+								<strong>SMTP username:</strong> your Gmail address<br/>
+								<strong>SMTP password:</strong> your password<br/>
+								<strong>SMTP port:</strong> 465<br/>
+							</code>	
+							<p><strong><i class="icon-right-open"></i>If you answer with 'n' (or blank)</strong>, you can enter your SMTP details in the <code>mailer.js</code> file at any time. Until you do, you won't have the option to send out your annotation project using your own SMTP server. You will still be able to send out the project manually, as Redcoat will provide you with a list of URLs to distribute via email.</p>
+						</div>
+
+					</div>
 
 					<h2 id="setting-up-a-new-project">Setting up a new project</h2>
 					<p class="pad-hor">Nulla lacus tellus, malesuada quis hendrerit sit amet, maximus id justo. Nunc pharetra tincidunt lectus, vel condimentum dui lobortis eget. Morbi sit amet blandit arcu, nec consectetur mi. Nulla at neque a ipsum vulputate ornare. Nunc venenatis, nulla sed fermentum dapibus, nisi est dapibus eros, vitae porttitor dolor neque nec augue. Phasellus dignissim tempus porttitor. Maecenas eget leo ut libero eleifend porttitor aliquet id felis. Mauris fermentum velit a ligula malesuada egestas. Fusce feugiat a sem ut pulvinar. Nulla sed pharetra sapien, vitae semper eros. Mauris urna ex, bibendum ac nibh convallis, placerat ullamcorper odio.</p>
