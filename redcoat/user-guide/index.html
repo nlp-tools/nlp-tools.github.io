@@ -58,12 +58,12 @@
 						<li><a href="#configuring-smtp-details">Configuring SMTP Details</a></li>
 					</ul>
 				</li>
-				<li><a href="#setting-up-a-new-project">Setting up a new project</a>
+				<li><a href="#setting-up-a-new-project">Setting up a New Project</a>
 					<ul>
-						<li><a href="#distributing-your-project">Distributing your annotation project</a></li>
+						<li><a href="#required-information">Required Information</a></li>
 					</ul>
 				</li>
-				<li><a href="#annotating-your-data">Annotating your data</a></li>
+				<li><a href="#annotating-data">Annotating Data</a></li>
 				<li><a href="#statistics-tracking">Statistics Tracking</a></li>
 			</ul>
 
@@ -135,73 +135,128 @@
 
 					</div>
 
-					<h2 id="setting-up-a-new-project">Setting up a new project</h2>
+					<h2 id="setting-up-a-new-project">Setting up a New Project</h2>
 					<div class="pad-hor">
+						<figure class="figure-right-small">
+							<img src="../../public/images/redcoat-setup.png"/>
+							<figcaption>Redcoat's setup page.</figcaption>
+						</figure>
 						<p>Once the server is up and running, you can continue the rest of the setup process in a browser such as Firefox or Chrome.</p>
 						<p>If you are running the application on your own computer, navigate to <code>localhost:3000</code> in your browser.</p>
 						<p>If you are running the application on a web server (and have set up the server using something like ssh), you can (optionally) close the ssh connection and navigate to <code>&lt;your server's IP address&gt;:3000</code> in your computer's browser. You'll need to ensure that port 3000 is open.</p>
-						<p>In your browser you can log in using the administrator account details you entered earlier and begin setting up a project. The setup page is fairly self-explanatory, but we have included the required details here.</p>
-						<table id="setup-project-table">
-							<thead>
-								<tr>
-									<th>Section</th>
-									<th>Required Information</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td><strong>Project Details</strong></td>
-									<td>Enter the <strong>project name</strong> and a <strong>brief description</strong> of the project. The description will appear in the automated mailouts if you decide to use them.</td>
-								</tr>
-								<tr>
-									<td><strong>Dataset</strong></td>
-									<td>Determine whether your data has already been tokenized. There are two options to choose from:
-									<ul>
-										<li><strong>"Yes, my data has been tokenized":</strong> upload your tokenized data. The dataset must be saved as a .txt file. Each token within your data must be separated by a newline, and each record must be separated by an additional newline. <a href="../../public/files/example_tokenized.txt" download>Click here</a> to download a small example file.</li>
-										<li><strong>"No, my data has not been tokenized":</strong> upload your untokenized data. The dataset must be saved as a .txt file. Each record within your data must be separated by a new line. <a href="../../public/files/example_untokenized.txt" download>Click here</a> to download a small example file. Your data will be tokenized using regular expression parsing.</li>
-										
-									</ul>
-									<em>Please note, it's highly recommended that you provide your own tokenized data. Providing untokenized data is only recommended for quickly trying out Redcoat.</em></td>
-								</tr>
-								<tr>
-									<td><strong>Entity Categories</strong></td>
-									<td>Determine how you would prefer to upload the entity categories. There are three options to choose from:
+						<p>In your browser you can log in using the administrator account details you entered earlier and begin setting up a project.</p>
+
+						<h3 id="required-information">Required Information</h3>
+						<div class="pad-hor">
+							<p> The setup page is fairly self-explanatory, but we have included the required details here.</p>						
+							<table id="setup-project-table">
+								<thead>
+									<tr>
+										<th>Section</th>
+										<th>Required Information</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><strong>Project Details</strong></td>
+										<td>Enter the <strong>project name</strong> and a <strong>brief description</strong> of the project. The description will appear in the automated mailouts if you decide to use them.</td>
+									</tr>
+									<tr>
+										<td><strong>Dataset</strong></td>
+										<td>Determine whether your data has already been tokenized. There are two options to choose from:
 										<ul>
-											<li><strong>"My entity categories are saved in a file":</strong> upload your entity categories. The list of entity categories must be saved as a .txt file. Each line in the file must contain an entity category, followed by a tab character, followed by an abbreviated form of that entity (such as PER for "Person").<br/>You may optionally add a tag colour by adding an additional tab character and a 6-digit hexadecimal colour code to the end of the line. This will determine the colour of the respective entity's label during annotation.<br/>
-												<a href="../../public/files/example_categories.txt" download>Click here</a> to download a small example file.</li>
-											<li><strong>"I'll list the entity categories here": </strong> enter your entity categories into the table that appears on the setup form. The "Abbreviation" will determine what is written in the output file after annotation, while the "Colour" will determine the colour of the tag during annotation.</li>
-											<li><strong>"I'm using the standard 4 class model for Named Entity Recognition":</strong> your entity classes will be "Person", "Location", "Organization" and "Misc". This option is provided to serve as a shortcut for users performing NER.</li>
-										</li>
-									</td>
-								</tr>
-								<tr>
-									<td><strong>Distribution</strong></td>
-									<td>Determine how you would like to distribute the annotation task. There are four options to choose from:
-										<ul>
-											<li><strong>"I'll complete the annotation task myself":</strong> test</li>
-											<li><strong>"I'd like a list of codes that I will send to the annotators myself":</strong> test</li>
-											<li><strong>"I'd like the server to email codes to the annotators automatically":</strong> test</li>
-											<li><strong>"I've provided SMTP credentials and want to email the codes using them":</strong> test</li>
+											<li><strong>"Yes, my data has been tokenized":</strong> You'll be asked to upload your tokenized data. The dataset must be saved as a .txt file. Each token within your data must be separated by a newline, and each record must be separated by an additional newline. <a href="../../public/files/example_tokenized.txt" download>Click here</a> to download a small example file.</li>
+											<li><strong>"No, my data has not been tokenized":</strong> You'll be asked to upload your untokenized data. The dataset must be saved as a .txt file. Each record within your data must be separated by a new line. <a href="../../public/files/example_untokenized.txt" download>Click here</a> to download a small example file. Your data will be tokenized using regular expression parsing.</li>
+											
 										</ul>
-									</td>
-								</tr>
-							</tbody>
+										<em>Please note, it's highly recommended that you provide your own tokenized data. Providing untokenized data is only recommended for quickly trying out Redcoat.</em></td>
+									</tr>
+									<tr>
+										<td><strong>Entity Categories</strong></td>
+										<td>Determine how you would prefer to upload the entity categories. There are three options to choose from:
+											<ul>
+												<li><strong>"My entity categories are saved in a file":</strong> You'll be asked to upload your entity categories. The list of entity categories must be saved as a .txt file. Each line in the file must contain an entity category, followed by a tab character, followed by an abbreviated form of that entity (such as PER for "Person").<br/>You may optionally add a tag colour by adding an additional tab character and a 6-digit hexadecimal colour code to the end of the line. This will determine the colour of the respective entity's label during annotation.<br/>
+													<a href="../../public/files/example_categories.txt" download>Click here</a> to download a small example file.</li>
+												<li><strong>"I'll list the entity categories here": </strong> You'll be asked to enter your entity categories into the table that appears on the setup form. The "Abbreviation" will determine what is written in the output file after annotation, while the "Colour" will determine the colour of the tag during annotation.</li>
+												<li><strong>"I'm using the standard 4 class model for Named Entity Recognition":</strong> your entity classes will be "Person", "Location", "Organization" and "Misc". This option is provided to serve as a shortcut for users performing NER.</li>
+											</ul>
+										</td>
+									</tr>
+									<tr>
+										<td><strong>Distribution</strong></td>
+										<td>Determine how you would like to distribute the annotation task. There are four options to choose from:
+											<ul>
+												<li><strong>"I'll complete the annotation task myself":</strong> Redcoat won't generate any URLs for you to send out to annotators. When submitting the setup form, you'll be able to start annotating right away. You can resume annotation at any time by logging in again using your administrator credentials</li>
+												<li><strong>"I'd like a list of codes that I will send to the annotators myself":</strong> You'll be asked to provide the <strong>number of annotators</strong> that will be working on your project. You will also be asked for the <strong>server address</strong> (such as your server's IP address or domain name). Redcoat will divide your dataset into batches (1 per annotator) and will generate a list of randomly-generated URLs, such as <code>&lt;your server's address&gt;:3000/annotation/sHd36CJL9z</code>. You can email one of these URLs to each annotator.</li>
+												<!--
+												<li><strong>"I'd like the server to email codes to the annotators automatically":</strong> You'll be asked to provide the number of annotators that will be working on your project. Redcoat will send a message to our mailer server, which will email 1 URL to each annotator automatically.</li>
+												-->
+												<li><strong>"I've provided SMTP credentials and want to use my SMTP server to email codes to each annotator":</strong> This option will become available if you entered your SMTP credentials when setting up the server (see <a href="#configuring-smtp-details">Configuring SMTP Details</a>). You'll be asked to provide the <strong>number of annotators</strong> that will be working on your project, and the <strong>server address</strong>. Redcoat will attempt to use your SMTP server to send out 1 URL (as above) to each annotator via email.</li>
+											</ul>
+										</td>
+									</tr>
+								</tbody>
 
-						</table>
-
+							</table>
+						</div>
 
 
 						</p>
 					</div>
-					<div class="pad-hor">
+					<!--<div class="pad-hor">
 						<h3 id="distributing-your-project">Distributing your annotation project</h3>
 						<p class="pad-hor">Pellentesque facilisis felis non efficitur scelerisque. Curabitur semper nec tortor id consectetur. Ut tempor dolor a sapien ornare, tincidunt porttitor tellus pellentesque. Proin dignissim maximus dolor non placerat. Nulla sagittis fringilla mi, eget vulputate urna laoreet ac. Proin rutrum odio sapien, vulputate cursus felis gravida ut.</p>
+					</div>-->
+					<h2 id="annotating-data">Annotating Data</h2>
+					<div class="pad-hor">
+						<figure class="figure-right-small">
+							<img src="../../public/images/redcoat.png"/>
+							<figcaption>Redcoat's simple tagging interface. Each colour represents a different entity class.</figcaption>
+						</figure>
+						<p>Once you have set up your project, you (or your annotators) will be able to begin annotating your data.</p>
+						<p>If you chose the option <em>"I'll complete the annotation task myself"</em> in the Distribution section on the setup page, you'll be directed straight to the annotation page at <code>/annotation</code>. If you selected one of the other options, your annotators will be able to access the annotation pages by visiting their unique URL.</p>
+						<p>Each annotator's respective dataset is separated into groups of 10 records. One group will appear in the browser at a time, and completing one group of records will save the results to a JSON database and allow users to progress to the next group.</p>
+						<p>The controls are as follows:</p>
+						<table class="controls-table">
+							<thead>
+								<tr>
+									<th>Key</th>
+									<th>Action</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Left/right arrow</td>
+									<td>Select previous/next token</td>
+								</tr>
+								<tr>
+									<td>Up/down arrow</td>
+									<td>Select previous/next record</td>
+								</tr>
+								<tr>
+									<td>Shift + left/right arrow</td>
+									<td>Select multiple tokens at once</td>
+								</tr>
+								<tr>
+									<td>1-9, 0</td>
+									<td>Tag token with the corresponding class</td>
+								</tr>
+								<tr>
+									<td>j</td>
+									<td>Jump to group</td>
+								</tr>
+							</tbody>
+						</table>
+
+						
 					</div>
-					<h2 id="annotating-your-data">Annotating your data</h2>
-					<p class="pad-hor">Maecenas pulvinar dui tortor, dignissim finibus est dapibus a. Nulla nec metus sapien. Sed a elit ipsum. Aliquam accumsan, metus et scelerisque fringilla, sem leo tempus sem, sed porta eros lacus nec turpis. Nunc ultricies, nibh et fermentum bibendum, arcu justo scelerisque quam, vitae scelerisque ante magna at enim. Proin sodales eleifend interdum. Integer sed magna vitae lacus molestie porttitor. Duis non ultricies libero. Duis nec dolor sapien. Nam egestas ex metus, quis maximus mauris rhoncus nec. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut mi nisi, porttitor eget ante in, auctor porttitor risus. Fusce sed augue feugiat, sagittis est ac, varius purus. Fusce diam mauris, consectetur eu ex consectetur, auctor congue sem. In at bibendum mauris, vel vehicula augue. Fusce luctus faucibus urna, non facilisis massa hendrerit a.</p>
+
 
 					<h2 id="statistics-tracking">Statistics Tracking</h2>
-					<p class="pad-hor">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus lacus vitae augue gravida, et condimentum lectus egestas. Curabitur sollicitudin velit ut consequat luctus. Sed a viverra diam. Nullam augue mauris, euismod vitae justo ac, ultricies bibendum lectus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque ullamcorper lorem nisi, quis pretium nibh vehicula finibus. Integer nibh est, molestie nec nisl eu, fringilla cursus ex. Duis est ex, porttitor nec mi ut, iaculis maximus nisl. Quisque vel ornare sem, non accumsan purus.</p>
+					<div class="pad-hor">
+						<p>While the annotation is underway, you can check the results by visiting <code>&lt;your server's address&gt;:3000/results</code> in your browser, and logging in using your administration account. You'll also be able to reach this page via the homepage after a project has been created.</p>
+						<p>On the results page you'll be able to view how many records have been annotated, along with the number of entities belonging to each class. If you elected to distribute the project to multiple annotators, the page will show progress bars for each annotator indicating how close they are to completion.</p>
+					</div>
 
 
 
