@@ -254,6 +254,41 @@ nav#subpage-nav ul.nav li:nth-child(odd):not(:last-child):after {
 	right: -1px;
 }
 
+@media(max-width: 992px) {
+	nav#subpage-nav {
+		height: auto;
+		position: relative;
+		top: auto;
+		margin-top: 40px;
+		background: rgb(158, 29, 18);
+
+	}
+	nav#subpage-nav.sticky {
+		position: absolute;
+	}
+	nav#subpage-nav ul.nav {
+		height: auto;
+	}
+	nav#subpage-nav ul.nav li {
+		display: block;
+	}
+	nav#subpage-nav ul.nav li.nav-download {
+		float: none;
+		padding-bottom: 4px;
+
+	}
+	nav#subpage-nav ul.nav li:after {
+		display: none;
+	}
+	#splash:not(.main-splash) {
+		height: auto;
+	}
+	#splash:not(.main-splash) .bg.sticky {
+		position: absolute;
+	}
+
+}
+
 
 figure {
 	margin: 60px 0 40px 0;
@@ -362,7 +397,12 @@ nav#sidenav ul li ul li:before {
     width: 40px;
 }
 
-
+@media(max-width: 992px) {
+	nav#sidenav {
+		position: relative;
+		display: block;
+	}
+}
 
 code.code-block {
 	display: block;

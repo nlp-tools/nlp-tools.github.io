@@ -110,6 +110,7 @@ a:hover {
 	margin: 0 auto;
 	position: relative;
 }
+
 #splash.black-text h1, #splash.black-text h2, #splash.black-text h3 {
 	color: #222;	
 }
@@ -142,6 +143,13 @@ a:hover {
 	left: 2px;
 }
 
+
+@media(max-width: 800px) {
+	#splash h1, #splash .splash-title {
+		font-size: 60px;
+	}
+}
+
 .wide-container {
 	width: 100%;
 	padding: 0 200px;
@@ -157,6 +165,13 @@ a:hover {
 @media(max-width: 1280px) {
 	.container {
 		width: 992px;
+	}
+}
+@media(max-width: 992px) {
+	.container {
+		width: 100%;
+		padding: 0px 20px;
+		box-sizing: border-box;
 	}
 }
 
@@ -271,6 +286,7 @@ ul.tools-list li {
 	width: 100%;
 	overflow: hidden;
 }
+
 ul.tools-list li .thumbnail {
 	width: 360px;
 	height: 200px;
@@ -315,6 +331,19 @@ ul.tools-list li .content a {
 	position: relative;
 }
 
+
+@media(max-width: 800px) {
+	ul.tools-list li {
+		display: block;
+	}
+	ul.tools-list li .thumbnail, ul.tools-list li .content {
+		display: block;
+	}
+	ul.tools-list li .thumbnail {
+		width: 100%;
+		border-bottom: 1px solid #ddd;
+	}
+}
 
 
 
