@@ -62,6 +62,9 @@ a:hover {
 	background-position: right 0 bottom -100px;			
 	z-index: -200;	
 }
+#splash .bg.triangles-1 {
+	background-image: url("../../public/images/triangles-1.png");
+}
 
 #splash #splash-sticky-bg.sticky {
 	z-index: 100;
@@ -100,6 +103,15 @@ a:hover {
 }
 #splash .unsplash a:hover {
 	color: #ddd;
+}
+#splash .unsplash {
+	color: #ccc;
+}
+#splash .unsplash.trianglify a {
+	color: #ddd;
+}
+#splash .unsplash.trianglify a:hover {
+	color: #eee;
 }
 
 #splash h1, #splash h2, #splash h3 {
